@@ -2,6 +2,10 @@
 
 Your one stop for police stops. An app to counter police brutality.
 
+## Demo
+
+https://youtu.be/9dq2M99aXmo
+
 ## Inspiration
 As the Black Lives Matter movement becomes more prevalent and as police brutality case leakings skyrocket, it can be scary to get pulled over by a police and anticipate what the interaction will be like. According to the Stanford Open Policing Project, police officers make more than 50,000 traffic stops.
 
