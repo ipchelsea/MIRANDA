@@ -3,11 +3,14 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/ipche/Documents/GitHub/Miranda/my-key.json"
+
 # Instantiates a client
 client = language.LanguageServiceClient()
 
 # The text to analyze
-with open('policeinteraction.txt') as f:
+with open('filename.txt') as f:
     text = f.read()
 document = types.Document(
     content=text,
@@ -29,4 +32,3 @@ for entity in response.entities:
     print('Type: {0}'.format(entity.type))
     print('Metadata: {0}'.format(entity.metadata))
     print('Salience: {0}'.format(entity.salience))
-
