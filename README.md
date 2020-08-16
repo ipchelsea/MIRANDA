@@ -10,7 +10,7 @@ Your one stop for police stops. An app to counter police brutality.
 As the Black Lives Matter movement becomes more prevalent and as police brutality case leakings skyrocket, it can be scary to get pulled over by a police and anticipate what the interaction will be like. According to the Stanford Open Policing Project, police officers make more than 50,000 traffic stops.
 
 ## What our app does
-This is an app that records and analyses police encounters using **Machine Learning** to hold police accountable. Additionally, 'Miranda' promotes community policing by alerting nearby users and family.
+This is an app that records and analyses police encounters using **Machine Learning** to help migitate interactions with the police. Additionally, 'Miranda' promotes community policing by alerting nearby users and family.
 
 ## User Story
 User: Innocent citizen being pulled over by the police
