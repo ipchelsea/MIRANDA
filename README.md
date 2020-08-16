@@ -11,11 +11,11 @@ This is an app that records and analyses police encounters using **Machine Learn
 ## User Story
 User: Innocent citizen being pulled over by the police
 
-When I see the flashing red and blue police lights in my rear-view mirror, I ask my phone “Hey Siri, I’m being pulled over.” The App “The one stop for police stops” opens up and automatically starts recording audio and video of this scene, streaming it to the cloud for secure storage. While the phone is recording the scene, my Constitutional and Miranda Rights are presented clearly on the app’s screen.
+- When I see the flashing red and blue police lights in my rear-view mirror, I ask my phone “Hey Siri, I’m being pulled over.” The App “The one stop for police stops” opens up and automatically starts recording audio and video of this scene, streaming it to the cloud for secure storage. While the phone is recording the scene, my Constitutional and Miranda Rights are presented clearly on the app’s screen.
 
-I can tap a button (or the screen) to send a notification to my family and local concerned citizens that I’m being pulled over and may need help interacting with the police (e.g. recording the incident themselves).
+- I can tap a button (or the screen) to send a notification to my family and local concerned citizens that I’m being pulled over and may need help interacting with the police (e.g. recording the incident themselves).
 
-My incident report (including a transcript, the officer’s name, and the officer’s license plate) is published securely. Optionally, this incident can be posted on Twitter (with location + hashtags) to solicit help from other folks in the community, especially when there’s racist or aggressive language involved.
+- My incident report (including a transcript, the officer’s name, and the officer’s license plate) is published securely. Optionally, this incident can be posted on Twitter (with location + hashtags) to solicit help from other folks in the community, especially when there’s racist or aggressive language involved.
 
 ## How I built it
 - Using **Google’s Speech Synchronous Recognition API**, audio files longer than 80 minutes can be transcribed successfully. 
