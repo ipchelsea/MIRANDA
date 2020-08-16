@@ -61,28 +61,4 @@ analyze_text('policeinteraction.txt')
 #     print('Metadata: {0}'.format(entity.metadata))
 #     print('Salience: {0}'.format(entity.salience))
 
-=======
-# The text to analyze
-with open('filename.txt') as f:
-    text = f.read()
-document = types.Document(
-    content=text,
-    type=enums.Document.Type.PLAIN_TEXT)
 
-# Detects the sentiment of the text
-sentiment = client.analyze_sentiment(document=document).document_sentiment
-
-print('Text: {}'.format(text))
-print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
-
-response = client.analyze_entities(
-    document=document,
-    encoding_type='UTF32',
-)
-
-for entity in response.entities:
-    print('Name: {0}'.format(entity.name))
-    print('Type: {0}'.format(entity.type))
-    print('Metadata: {0}'.format(entity.metadata))
-    print('Salience: {0}'.format(entity.salience))
->>>>>>> f06e532364c02b8681a2b6ff9392080675c00cda
