@@ -17,18 +17,26 @@ def detectText(imageName):
     image = vision.types.Image(content=content)
 
     response = client.text_detection(image=image)  # returns TextAnnotation
-    df = pd.DataFrame(columns=['locale', 'description'])
+    #df = pd.DataFrame(columns=['locale', 'description'])
 
     texts = response.text_annotations
     for text in texts:
-        df = df.append(
-            dict(
-                locale=text.locale,
-                description=text.description
-            ),
-            ignore_index=True
-        )
-    return df
+        #description=text.description
+       # print(description)
+        if len(text.description) == 7:
+            #df = df.append(
+                #dict(
+                    #locale=text.locale,
+                description=text.description,
+#			print(description)
+#            		if len(description) == 7:
+#				return description
+            #),
+               # ignore_index=True
+           # )
+   #return df
+    return description
+
 print(detectText('carpic.jpg'))    #pass in name of image
 
 
