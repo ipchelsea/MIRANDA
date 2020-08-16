@@ -4,7 +4,7 @@ from google.cloud.language import enums
 from google.cloud.language import types
 
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/ipche/Documents/GitHub/Miranda/my-key.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ""
 
 # Instantiates a client
 client = language.LanguageServiceClient()
