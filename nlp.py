@@ -19,22 +19,48 @@ def analyze_text(textFile) :
         )
 
         sentiment = client.analyze_sentiment(document=document).document_sentiment
-
+        
         print('Text: {}'.format(text))
-        print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
 
         response = client.analyze_entities(
             document=document, 
             encoding_type='UTF32',
         )
 
-        for entity in response.entities:
-            print('Name: {}'.format(entity.name))
-            print('Type: {}'.format(entity.type))
-            print('Metadata: {}'.format(entity.metadata))
-            print('Salience: {}'.format(entity.salience))
+        # for entity in response.entities:
+        #     print('Name: {}'.format(entity.name))
+        #     print('Type: {}'.format(entity.type))
+        #     print('Metadata: {}'.format(entity.metadata))
+        #     print('Salience: {}'.format(entity.salience))
+        #     if (entity.type == 'PERSON'):
+        #         list.add(entity)
 
-analyze_text('/Users/rahulpulidindi/Downloads/policeinteraction.txt')
+        important_details = []
+        for entity in response.entities:
+            print('=' * 79)
+            entity_type = enums.Entity.Type(entity.type).name
+            results = [
+                ('name', entity.name),
+                ('type', entity_type),
+                ('salience', entity.salience),
+                ('wikipedia_url', entity.metadata.get('wikipedia_url', '-')),
+            ]
+            if (entity_type == 'PERSON' or entity_type == 'LOCATION' or
+                entity_type == 'ORGANIZATION' or entity_type == 'PHONE_NUMBER' or
+                entity_type == 'ADDRESS' or entity_type == 'DATE'):
+                important_details.append(entity.name)
+
+            for k, v in results:
+                print('{:15}: {}'.format(k, v))    
+
+        print(important_details)    
+        print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
+
+        if (sentiment.score <= -0.3):
+            alert_users()
+            alert_family()
+
+analyze_text('copinteraction.txt')
 
 
 
