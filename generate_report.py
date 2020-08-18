@@ -4,6 +4,8 @@ import uuid
 
 from fpdf import FPDF
 
+from vision import detectText
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MIRANDA_LOGO_PATH = os.path.join(BASE_DIR, 'miranda_logo.png')
@@ -26,7 +28,7 @@ class ReportModel(object):
     def __init__(self, driver_name,
                  location, start_time, end_time,
                  transcript, links: Dict[AnyStr, AnyStr] = None,
-                 officer_name=None, officer_id=None):
+                 officer_name=None, officer_id=None, officer_license=None):
         self.driver_name = driver_name
         self.location = location
         self.start_time = start_time
@@ -35,7 +37,7 @@ class ReportModel(object):
         self.links = links
         self.officer_name = officer_name
         self.officer_id = officer_id
-
+        self.officer_license = detectText('carpic.jpg')
 
 def generate_pdf(output_folder, model: ReportModel):
     """
