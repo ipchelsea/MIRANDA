@@ -3,6 +3,7 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 # export GOOGLE_APPLICATION_CREDENTIALS="/Users/rahulpulidindi/Downloads/Miranda-60c57eeb597d.json"
+from alert import *
 
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/rahulpulidindi/Downloads/Miranda-60c57eeb597d.json"
@@ -10,7 +11,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/rahulpulidindi/Downloads/
 # Instantiates a client
 client = language.LanguageServiceClient()
 
-def analyze_text(textFile) :
+def analyze_text(textFile):
     with open(textFile) as f:
         text = f.read()
         document = types.Document(
@@ -56,9 +57,9 @@ def analyze_text(textFile) :
         print(important_details)    
         print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
 
-        if (sentiment.score <= -0.3):
-            alert_users()
-            alert_family()
+        # if (sentiment.score <= -0.1):
+        #     alert.alert_users()
+        #     alert_family()
 
 analyze_text('copinteraction.txt')
 
